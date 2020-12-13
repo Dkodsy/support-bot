@@ -10,5 +10,6 @@ menu = ReplyKeyboardMarkup(
             KeyboardButton(text='FAQ Часто задаваемые вопросы')
         ],
     ],
-    resize_keyboard=True
+    resize_keyboard=True,
+    one_time_keyboard=True
 )
