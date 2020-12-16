@@ -1,7 +1,7 @@
 from aiogram.types import Message, CallbackQuery
 
 from keyboards.inline.callback_datas import errors_callback
-from keyboards.inline.error_buttons import choice_model_kkt, popular_errors, back_to_model, back_to_popular_errors
+from keyboards.inline.error_buttons import choice_model_kkt, popular_errors, back_to_model
 from loader import dp
 
 
@@ -10,78 +10,6 @@ async def show_instructions_buttons(message: Message):
     await message.answer(text='Выберите номер ошибки\n'
                               'Если вы не нашли ошибку, то выберите по модели ККТ\n'
                               'Скорее всего вы найдете ошибку там\n', reply_markup=popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№210'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№211'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№217'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№218'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№231'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№234'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№235'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№240'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№244'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№3807'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№3924'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
-
-
-@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№3933'))
-async def inst_atol_with_buttons(call: CallbackQuery):
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
 
 
 # реагирование на нажатие кнопки "Выбор ошибки по модели ККТ"
