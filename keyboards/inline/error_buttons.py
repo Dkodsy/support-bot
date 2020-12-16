@@ -7,8 +7,8 @@ popular_errors = InlineKeyboardMarkup(
     inline_keyboard=[
         [
             InlineKeyboardButton(text='№210', callback_data=errors_callback.new(choice_kkt_err='№210')),
-            InlineKeyboardButton(text='№211', callback_data=errors_callback.new(choice_kkt_err='#211')),
-            InlineKeyboardButton(text='№217', callback_data=errors_callback.new(choice_kkt_err='№217r')),
+            InlineKeyboardButton(text='№211', callback_data=errors_callback.new(choice_kkt_err='№211')),
+            InlineKeyboardButton(text='№217', callback_data=errors_callback.new(choice_kkt_err='№217')),
             InlineKeyboardButton(text='№218', callback_data=errors_callback.new(choice_kkt_err='№218')),
             InlineKeyboardButton(text='№231', callback_data=errors_callback.new(choice_kkt_err='№231')),
             InlineKeyboardButton(text='№234', callback_data=errors_callback.new(choice_kkt_err='№234')),
