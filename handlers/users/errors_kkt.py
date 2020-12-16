@@ -1,7 +1,7 @@
 from aiogram.types import Message, CallbackQuery
 
 from keyboards.inline.callback_datas import errors_callback
-from keyboards.inline.error_buttons import choice_model_kkt, popular_errors
+from keyboards.inline.error_buttons import choice_model_kkt, popular_errors, back_to_model, back_to_popular_errors
 from loader import dp
 
 
@@ -12,17 +12,129 @@ async def show_instructions_buttons(message: Message):
                               'Скорее всего вы найдете ошибку там\n', reply_markup=popular_errors)
 
 
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№210'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№211'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№217'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№218'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№231'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№234'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№235'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№240'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№244'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№3807'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№3924'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='№3933'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=back_to_popular_errors)
+
+
+# реагирование на нажатие кнопки "Выбор ошибки по модели ККТ"
 @dp.callback_query_handler(errors_callback.filter(choice_kkt_err='model'))
 async def inst_atol_with_buttons(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.edit_text(text='Выберите необходимую модель ККТ', reply_markup=choice_model_kkt)
 
 
-@dp.callback_query_handler(text='back_error')
-async def back(call: CallbackQuery):
+# реагирование на нажатие кнопки "НАЗАД" - возвращает нас к первоначальной клаве
+@dp.callback_query_handler(text='back_to_popular_errors')
+async def back_to_popular_err(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.delete()
     await call.message.answer('Выберите ошибку по номеру или по модели ККТ',
                               reply_markup=popular_errors)  # здесь это реализовано через тупой костыль "удалить
     # сообщение и прислать новое
-    # TODO в будущем нужно будет переписать эту кнопку(скорее всего кнопкИ)"
+    # TODO в будущем нужно будет переписать кнопки НАЗАД(ну и скорее всего все кнопки)"
+
+
+# реагирование на нажатие кнопки АТОЛ
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='atol'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Список ошибок с ссылками на статьи', reply_markup=back_to_model)
+
+
+# реагирование на нажатие кнопки ЭВОТОР
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='evotor'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Список ошибок с ссылками на статьи', reply_markup=back_to_model)
+
+
+# реагирование на нажатие кнопки МТС
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='mts'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Список ошибок с ссылками на статьи', reply_markup=back_to_model)
+
+
+# реагирование на нажатие кнопки ШТРИХ ЭЛВЕС
+@dp.callback_query_handler(errors_callback.filter(choice_kkt_err='shtrix_elves'))
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.answer(cache_time=60)
+    await call.message.edit_text(text='Список ошибок с ссылками на статьи', reply_markup=back_to_model)
+
+
+# реагирование на нажатие кнопки "НАЗАД" - возвращает нас к выбору модели ККТ
+@dp.callback_query_handler(text='back_to_model')
+async def inst_atol_with_buttons(call: CallbackQuery):
+    await call.message.delete()
+    await call.message.answer('Выберите необходимую модель ККТ',
+                              reply_markup=choice_model_kkt)  # здесь это реализовано через тупой костыль "удалить
+    # сообщение и прислать новое
+    # TODO в будущем нужно будет переписать кнопки НАЗАД(ну и скорее всего все кнопки)"
