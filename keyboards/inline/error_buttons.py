@@ -9,19 +9,23 @@ popular_errors = InlineKeyboardMarkup(
             InlineKeyboardButton(text='№210', callback_data=errors_callback.new(choice_kkt_err='№210')),
             InlineKeyboardButton(text='№211', callback_data=errors_callback.new(choice_kkt_err='№211')),
             InlineKeyboardButton(text='№217', callback_data=errors_callback.new(choice_kkt_err='№217')),
+
+        ],
+        [
             InlineKeyboardButton(text='№218', callback_data=errors_callback.new(choice_kkt_err='№218')),
             InlineKeyboardButton(text='№231', callback_data=errors_callback.new(choice_kkt_err='№231')),
             InlineKeyboardButton(text='№234', callback_data=errors_callback.new(choice_kkt_err='№234')),
-
         ],
         [
             InlineKeyboardButton(text='№235', callback_data=errors_callback.new(choice_kkt_err='№235')),
             InlineKeyboardButton(text='№240', callback_data=errors_callback.new(choice_kkt_err='№240')),
             InlineKeyboardButton(text='№244', callback_data=errors_callback.new(choice_kkt_err='№244')),
+
+        ],
+        [
             InlineKeyboardButton(text='№3807', callback_data=errors_callback.new(choice_kkt_err='№3807')),
             InlineKeyboardButton(text='№3924', callback_data=errors_callback.new(choice_kkt_err='№3924')),
             InlineKeyboardButton(text='№3933', callback_data=errors_callback.new(choice_kkt_err='№3933')),
-
         ],
         [
             InlineKeyboardButton(text='Выбор ошибки по модели ККТ',
