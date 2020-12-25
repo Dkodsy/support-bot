@@ -1,47 +1,48 @@
 from aiogram.types import Message, CallbackQuery
 
-from keyboards.inline.callback_datas import instructions_callback
-from keyboards.inline.instruction_buttons import choice_kkt
+from keyboards.inline.callback_datas import menu_cd
+from keyboards.inline.instruction_buttons import instructions_buttons
 from loader import dp
 
 
 @dp.message_handler(text='Инструкции кассира')
 async def show_instructions_buttons(message: Message):
-    await message.answer('Выберите необходимую модель ККТ', reply_markup=choice_kkt)
+    markup = await instructions_buttons()
+    await message.answer('Выберите необходимую модель ККТ', reply_markup=markup)
 
 
-@dp.callback_query_handler(instructions_callback.filter(choice_kkt_instr='atol_with_buttons'))
-async def inst_atol_with_buttons(call: CallbackQuery):
+@dp.callback_query_handler(menu_cd.filter(category='instructions', subcategory='atol_with_buttons'))
+async def atol_with_buttons(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.edit_text(text='TEXT')
 
 
-@dp.callback_query_handler(instructions_callback.filter(choice_kkt_instr='atol_sigma'))
-async def inst_atol_with_buttons(call: CallbackQuery):
+@dp.callback_query_handler(menu_cd.filter(category='instructions', subcategory='atol_sigma'))
+async def atol_sigma(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.edit_text(text='TEXT')
 
 
-@dp.callback_query_handler(instructions_callback.filter(choice_kkt_instr='evotor'))
-async def inst_atol_with_buttons(call: CallbackQuery):
+@dp.callback_query_handler(menu_cd.filter(category='instructions', subcategory='evotor'))
+async def evotor(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.edit_text(text='TEXT')
 
 
-@dp.callback_query_handler(instructions_callback.filter(choice_kkt_instr='shtrix_elves'))
-async def inst_atol_with_buttons(call: CallbackQuery):
+@dp.callback_query_handler(menu_cd.filter(category='instructions', subcategory='shtrix_elves'))
+async def shtrix_elves(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.edit_text(text='TEXT')
 
 
-@dp.callback_query_handler(instructions_callback.filter(choice_kkt_instr='mts'))
-async def inst_atol_with_buttons(call: CallbackQuery):
+@dp.callback_query_handler(menu_cd.filter(category='instructions', subcategory='mts'))
+async def mts(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.edit_text(text='TEXT')
 
 
-@dp.callback_query_handler(instructions_callback.filter(choice_kkt_instr='mercury'))
-async def inst_atol_with_buttons(call: CallbackQuery):
+@dp.callback_query_handler(menu_cd.filter(category='instructions', subcategory='mercury'))
+async def mercury(call: CallbackQuery):
     await call.answer(cache_time=60)
     await call.message.edit_text(text='TEXT')
 # TODO нужно красиво оформить ответ в виде статьи
