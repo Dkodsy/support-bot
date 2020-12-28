@@ -7,12 +7,12 @@ async def instructions_buttons():
     markup = InlineKeyboardMarkup(
         inline_keyboard=[
             [
-                InlineKeyboardButton(text='ККТ "АТОЛ(кнопочные)"',
+                InlineKeyboardButton(text='ККТ "АТОЛ (кнопочные)"',
                                      callback_data=menu_cd.new(category='instructions',
                                                                subcategory='atol_with_buttons')),
             ],
             [
-                InlineKeyboardButton(text='💰 "АТОЛ Sigma"',
+                InlineKeyboardButton(text='"АТОЛ Sigma"',
                                      callback_data=menu_cd.new(category='instructions', subcategory='atol_sigma')),
             ],
             [
@@ -20,11 +20,11 @@ async def instructions_buttons():
                                      callback_data=menu_cd.new(category='instructions', subcategory='evotor')),
             ],
             [
-                InlineKeyboardButton(text='ККТ "ШТРИХ Элвес МФ"',
+                InlineKeyboardButton(text='ККТ "ШТРИХ"',
                                      callback_data=menu_cd.new(category='instructions', subcategory='shtrix_elves')),
             ],
             [
-                InlineKeyboardButton(text='ККТ "МТС"',
+                InlineKeyboardButton(text='ККТ "МТС/LiteBox"',
                                      callback_data=menu_cd.new(category='instructions', subcategory='mts')),
             ],
             [

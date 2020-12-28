@@ -8,6 +8,14 @@ async def main_error_menu():
     markup = InlineKeyboardMarkup(
         inline_keyboard=[
             [
+                InlineKeyboardButton(text='❗ Ресурс ФН менее 30 дней',
+                                     callback_data=menu_cd.new(category='errors',
+                                                               subcategory='error_resource_fn')),
+                InlineKeyboardButton(text='❗️ОФД не ОТВЕЧАЕТ',
+                                     callback_data=menu_cd.new(category='errors',
+                                                               subcategory='error_ofd_do_not')),
+            ],
+            [
                 InlineKeyboardButton(text='№210',
                                      callback_data=menu_cd.new(category='errors',
                                                                subcategory='error_number_№210')),
@@ -76,10 +84,10 @@ async def choice_model_kkt():
                                                            subcategory='evotor')),
         ],
         [
-            InlineKeyboardButton(text='МТС',
+            InlineKeyboardButton(text='МТС/LiteBox',
                                  callback_data=menu_cd.new(category='errors',
                                                            subcategory='mts')),
-            InlineKeyboardButton(text='ШТРИХ Элвес',
+            InlineKeyboardButton(text='ШТРИХ',
                                  callback_data=menu_cd.new(category='errors',
                                                            subcategory='shtrix_elves')),
         ],
