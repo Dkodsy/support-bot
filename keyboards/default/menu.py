@@ -9,6 +9,18 @@ menu = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='FAQ Часто задаваемые вопросы')
         ],
+        [
+            KeyboardButton(text='Заказать звонок')
+        ]
     ],
     resize_keyboard=True,
+)
+
+cancel = ReplyKeyboardMarkup(
+    keyboard=[
+        [
+            KeyboardButton(text='⬅️ Отмена')
+        ]
+    ],
+    resize_keyboard=True
 )
