@@ -8,14 +8,6 @@ async def main_error_menu():
     markup = InlineKeyboardMarkup(
         inline_keyboard=[
             [
-                InlineKeyboardButton(text='❗ Ресурс ФН менее 30 дней',
-                                     callback_data=menu_cd.new(category='errors',
-                                                               subcategory='error_resource_fn')),
-                InlineKeyboardButton(text='❗️ОФД не ОТВЕЧАЕТ',
-                                     callback_data=menu_cd.new(category='errors',
-                                                               subcategory='error_ofd_do_not')),
-            ],
-            [
                 InlineKeyboardButton(text='№210',
                                      callback_data=menu_cd.new(category='errors',
                                                                subcategory='error_number_№210')),

@@ -99,19 +99,3 @@ async def error_number_3933(call: CallbackQuery):
     markup = await back_to_main_error_menu()
     await call.answer(cache_time=60)
     await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=markup)
-
-
-@dp.callback_query_handler(menu_cd.filter(category='errors',
-                                          subcategory='error_resource_fn'))
-async def error_resource_fn(call: CallbackQuery):
-    markup = await back_to_main_error_menu()
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=markup)
-
-
-@dp.callback_query_handler(menu_cd.filter(category='errors',
-                                          subcategory='error_ofd_do_not'))
-async def error_ofd_do_not(call: CallbackQuery):
-    markup = await back_to_main_error_menu()
-    await call.answer(cache_time=60)
-    await call.message.edit_text(text='Что это ошибка означает, бла бла бла', reply_markup=markup)
